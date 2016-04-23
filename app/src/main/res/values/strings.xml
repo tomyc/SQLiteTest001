@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SQLiteTest001</string>
+    <string name="id_string">ID</string>
+    <string name="idNoValue">NoValue</string>
+    <string name="product_string">Product</string>
+    <string name="quantity_string">Quantity</string>
+    <string name="add_string">Add</string>
+    <string name="find_string">Find</string>
+    <string name="delete_string">Delete</string>
+</resources>

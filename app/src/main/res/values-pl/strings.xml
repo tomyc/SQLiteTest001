@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SQLiteTest001</string>
+    <string name="add_string">Dodaj</string>
+    <string name="delete_string">Usuń</string>
+    <string name="find_string">Znajdź</string>
+    <string name="idNoValue">Brak Wartości</string>
+    <string name="id_string">Id</string>
+    <string name="product_string">Produkt</string>
+    <string name="quantity_string">Ilość</string>
+</resources>
