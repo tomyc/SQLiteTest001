@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+
 /**
  * Created by Tomasz on 18.04.2016.
  */
@@ -75,5 +77,28 @@ public class MyDBHandler extends SQLiteOpenHelper {
         }
         db.close();
         return wynik;
+    }
+
+    public ArrayList<Produkt> getAllProducts(){
+        ArrayList<Produkt> produkty = new ArrayList<Produkt>();
+        String zapytanie = "SELECT * FROM "+TABLE_PRODUCTS;
+        SQLiteDatabase  db = this.getWritableDatabase();
+        Cursor wskaznik = db.rawQuery(zapytanie,null);
+        wskaznik.moveToFirst();
+        while (!wskaznik.isAfterLast()){
+            Produkt produktTM = cursorToProdukt(wskaznik);
+            produkty.add(produktTM);
+            wskaznik.moveToNext();
+        }
+        db.close();
+        return produkty;
+    }
+
+    private Produkt cursorToProdukt(Cursor cursor){
+        Produkt produktC = new Produkt();
+        produktC.set_id(cursor.getInt(0));
+        produktC.set_nazwaprodukt(cursor.getString(1));
+        produktC.set_ilosc(cursor.getInt(2));
+        return produktC;
     }
 }

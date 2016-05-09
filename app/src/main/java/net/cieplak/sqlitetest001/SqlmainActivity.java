@@ -1,5 +1,6 @@
 package net.cieplak.sqlitetest001;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -56,4 +57,8 @@ public class SqlmainActivity extends AppCompatActivity {
         }
     }
 
+    public void onClickBtn(View view){
+        Intent i = new Intent(this,ListMainActivity.class);
+        startActivity(i);
+    }
 }
